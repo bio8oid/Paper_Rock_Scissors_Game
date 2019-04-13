@@ -40,7 +40,7 @@
     "build:copydir": "cp index.html links.html -r css fonts images js docs/",
     "watch": "npm-run-all -p watch:*",
     "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -p sassprefixer:*",
-    "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
+    "watch:browsersync": "browser-sync start --server --files css/*.css *.html js/*.js",
     "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "sassprefixer:autoprefixer": "autoprefixer-cli css/style.css css/style.css"
   },
