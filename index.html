@@ -9,21 +9,33 @@
 
 <body>
 
+	<!------------------ Winning score info ----------------->
+
 	<div class="rounds" id="rounds"></div>
+
+	<!------------------ Buttons ----------------->
 
 	<div>
 		<button class="new" id="new-game">New Game</button>
 	</div>
-	
+
 	<div class="" id="ilusion">
 		<button id="paper-button" class="player-move"  data-move="paper">PAPER</button>
 		<button id="rock-button" class="player-move"  data-move="rock">ROCK</button>
 		<button id="scisors-button" class="player-move"  data-move="scisors">SCISORS</button>
 	</div>
 
+	<!------------------ Output infos ----------------->
+
 	<div id="output"></div>
 	<div class="game-over" id="info"></div>
 	<div  id="result"></div>
+
+	<!------------------ Output infos table ----------------->
+
+	
+
+	<!------------------ Modals ----------------->
 
 	<div id="page-wrapper" class="">
 		<h3></h3>
@@ -35,9 +47,9 @@
 	<div class="overlay " id="modal-overlay">
 		<div class="modal " id="modal-one">
 			<a href="#" class="close">x</a>
-			<header id="won"></header>
+			<header class="headPop" id="won"></header>
 			<div class="content">
-				<p></p>
+				<div id="table" class="table"></div>
 			</div>
 		</div>
 		<div class="modal " id="modal-two">
@@ -55,6 +67,8 @@
 			</div>
 		</div>
 	</div>
+
+	<!------------------ Script file ----------------->
 
 	<script  src="js/script.js"></script>
 

@@ -1,6 +1,6 @@
 
 
-
+// ----- Whatever ----- \\
 
 body {
 	padding-top: 200px;
@@ -33,7 +33,7 @@ button:hover {
   	display: none;
 }
 .game-over {
-  color: red;
+  color: #02ac46;
   }
 .rounds {
   color: #02ac46;
@@ -44,7 +44,7 @@ button:hover {
 }
 
 
-// Modals \\
+// ----- Modals ----- \\
 
 
 .overlay {
@@ -64,13 +64,26 @@ button:hover {
 .modal {
   display: none;
   background: #fff;
-  width: 400px;
+  min-width: 400px;
   height: 40vh;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 10px;
+  header {
+    display: none;
+    font-size: 32px;
+    line-height: 30px;
+    min-height: 30px;
+    font-weight: bold;
+    padding: 0 30px;
+    font-family: 'Fredericka the Great', cursive;
+    color: red;
+    &.headPop {
+      display: block; 
+    }
+  }
 
   &.show {
     display: block;
@@ -85,19 +98,30 @@ button:hover {
     font-size: 32px;
     font-family: 'Fredericka the Great', cursive;
   }
-  
-  header {
-    font-size: 32px;
-    line-height: 30px;
-    min-height: 30px;
-    font-weight: bold;
-    padding: 0 30px;
-    font-family: 'Fredericka the Great', cursive;
-    color: red;
-  }
 
   .content {
     min-height: 30px;
     padding: 5px 30px;
+    vertical-align: center;
+    margin: 100px 0;
+  }
+}
+
+
+// ----- Table ----- \\
+
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  border: 1px solid #000;
+  height: 100px;
+  border-radius: 20px;
+  //text-align: center;
+  //vertical-align: center;
+  head {
+    display: block;
+    border-bottom: 1px solid #000;
   }
 }

@@ -33,7 +33,7 @@ button:hover {
 }
 
 .game-over {
-  color: red;
+  color: #02ac46;
 }
 
 .rounds {
@@ -62,13 +62,28 @@ button:hover {
 .modal {
   display: none;
   background: #fff;
-  width: 400px;
+  min-width: 400px;
   height: 40vh;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 10px;
+}
+
+.modal header {
+  display: none;
+  font-size: 32px;
+  line-height: 30px;
+  min-height: 30px;
+  font-weight: bold;
+  padding: 0 30px;
+  font-family: 'Fredericka the Great', cursive;
+  color: red;
+}
+
+.modal header.headPop {
+  display: block;
 }
 
 .modal.show {
@@ -85,18 +100,24 @@ button:hover {
   font-family: 'Fredericka the Great', cursive;
 }
 
-.modal header {
-  font-size: 32px;
-  line-height: 30px;
-  min-height: 30px;
-  font-weight: bold;
-  padding: 0 30px;
-  font-family: 'Fredericka the Great', cursive;
-  color: red;
-}
-
 .modal .content {
   min-height: 30px;
   padding: 5px 30px;
+  vertical-align: center;
+  margin: 100px 0;
+}
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  width: 100px;
+  border: 1px solid #000;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.box head {
+  display: block;
+  border-bottom: 1px solid #000;
 }
 /*# sourceMappingURL=style.css.map */
