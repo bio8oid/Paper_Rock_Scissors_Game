@@ -27,6 +27,7 @@
    paper: 1,
    rock: 2,
    scisors: 3,
+   progress: []
  };
 
 
@@ -59,7 +60,6 @@ function roundsCountdown(){
     
     params.output.innerHTML = '<br> Game over, please press the New Game button!';
     document.getElementById('trigger').click();
-
 
     params.ilusion.classList.add('magic');
     if(params.scoreX === params.scoreY) {
