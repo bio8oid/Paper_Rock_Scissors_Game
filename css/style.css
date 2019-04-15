@@ -63,7 +63,7 @@ button:hover {
   display: none;
   background: #fff;
   min-width: 400px;
-  height: 40vh;
+  min-height: 40vh;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -74,8 +74,6 @@ button:hover {
 .modal header {
   display: none;
   font-size: 32px;
-  line-height: 30px;
-  min-height: 30px;
   font-weight: bold;
   padding: 0 30px;
   font-family: 'Fredericka the Great', cursive;
@@ -101,18 +99,16 @@ button:hover {
 }
 
 .modal .content {
-  min-height: 30px;
-  padding: 5px 30px;
-  vertical-align: center;
-  margin: 100px 0;
+  padding: 0;
+  margin: 50px 0;
 }
 
 .box {
   display: inline-block;
   margin: 10px;
-  width: 100px;
+  width: 120px;
   border: 1px solid #000;
-  height: 100px;
+  height: 120px;
   border-radius: 20px;
 }
 
