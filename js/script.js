@@ -54,7 +54,7 @@ function clear() {
   params.scoreY = 0;
   params.total = 1;
   params.result.innerHTML= '';
-  params.progress.map = [];
+  //params.progress.map = [];
   params.progress = [];
 }
 
