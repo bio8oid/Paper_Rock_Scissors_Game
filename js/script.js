@@ -55,7 +55,7 @@ function clear() {
   params.total = 1;
   params.result.innerHTML= '';
   //params.progress.map = [];
-  params.progress = [];
+  //params.progress = [];
 }
 
 // Round Downcounter \\
@@ -126,6 +126,7 @@ function playerMove(event) {
   draw();
   roundsCountdown();  
   document.getElementById('trigger').click();
+  push();
 }
 if(value === 1 && params.randomNumber === 2) {
   params.output.innerHTML = 'YOU - WON <br> Robo - Lost';
@@ -171,7 +172,7 @@ if(value === 3 && params.randomNumber === 2) {
 }
 
 
-console.log(params.progress);
+
 
 function push() {
 
@@ -215,6 +216,8 @@ function push() {
 
 
   function generate(x) { 
+    var self = div;
+    var yourself = header;
     var div = document.createElement('div'); 
     div.id = x.id;
     div.classList.add('box');
@@ -226,14 +229,26 @@ function push() {
    document.getElementById(div.id).appendChild(header);
      // paragraph generate
      div.insertAdjacentHTML('beforeend', x.content);
-     
+
+     function cleanTable() {
+  document.getElementById('table').removeChild(self);
+  document.getElementById(div.id).removeChild(yourself);
+}
+
    };
-params.progress.map(generate);
+
+
+
+console.log(params.progress);
 console.log(params.progress.map);
-params.progress.map = [];
-//params.progress = [];
+params.progress.map(generate);
+//params.progress(generate);
+params.progress = [];
+cleanTable();
+//params.progress.map = [];
 //console.log(params.progress.map);
 } 
+
 
 
 // Buttons \\
