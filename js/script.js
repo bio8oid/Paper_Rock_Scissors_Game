@@ -1,10 +1,4 @@
 
-
-
-// UPDATED VERSION \\
-
-
-
 'use strict'; 
 (function(){ 
 
@@ -54,8 +48,9 @@ function clear() {
   params.scoreY = 0;
   params.total = 1;
   params.result.innerHTML= '';
-  //params.progress.map = [];
-  //params.progress = [];
+  cleanTable();
+  params.progress.map = [];
+  params.progress = [];
 }
 
 // Round Downcounter \\
@@ -236,19 +231,13 @@ function push() {
 }
 
    };
-
-
-
 console.log(params.progress);
 console.log(params.progress.map);
 params.progress.map(generate);
-//params.progress(generate);
 params.progress = [];
+params.progress.map = [];
 cleanTable();
-//params.progress.map = [];
-//console.log(params.progress.map);
 } 
-
 
 
 // Buttons \\
@@ -307,149 +296,3 @@ var hideModal = function(event){
 
 
 })(); 
-
-
-
-/*
-
-'use strict';
-(function(){ 
-
-var output = document.getElementById('output');
-var rounds = document.getElementById('rounds');
-var result = document.getElementById('result');
-var info = document.getElementById('info');
-var ilusion = document.getElementById('ilusion');
-var paperButton = document.getElementById('paper-button');
-var rockButton = document.getElementById('rock-button');
-var scisorsButton = document.getElementById('scisors-button');
-var newGame = document.getElementById('new-game');
-var randomNumber;
-var roundsNumber;
-var scoreX = 0;
-var scoreY = 0;
-var paper = 1;
-var rock = 2;
-var scisors = 3;
-
-
-// Score Counter \\
-
-function oneUpX(){
-  scoreX++;
-  result.innerHTML = '<br>' + scoreX + ' - ' + scoreY;
-}
-function oneUpY(){
-  scoreY++;
-  result.innerHTML = '<br>' + scoreX + ' - ' + scoreY;
-}
-
-// Clear All Info \\
-
-function clear() {
-  output.innerHTML= '';
-  info.innerHTML= '';
-  scoreX = 0;
-  scoreY = 0;
-  result.innerHTML= '';
-}
-
-// Round Downcounter \\
-
-function roundsCountdown(){
-  roundsNumber--;
-  rounds.innerHTML =  roundsNumber + ' Rounds left';  
-  if(roundsNumber === 0) {
-    output.innerHTML = '<br> Game over, please press the New Game button!';
-    ilusion.classList.add('magic');
-    if(scoreX === scoreY) {
-    info.innerHTML = '<br> DRAW !!!'; 
-  } 
-    if(scoreX > scoreY) {
-    info.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!'; 
-  } 
-    if(scoreX < scoreY) {
-    info.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!'; 
-  } 
- }
-}
-
-// Robo Move \\
-
-function random() {
-randomNumber = Math.floor(Math.random() * 3) + 1;
-}
-
-// Bio Player Move \\
-
-var playerMove = function(value) {
-  if(value === randomNumber) {
-    output.innerHTML = '<br> DRAW';
-  }
-  if(value === 1 && randomNumber === 2) {
-    output.innerHTML = '<br> YOU WON: you played PAPER, Robo played ROCK';
-    oneUpX();
-  }
-  if(value === 1 && randomNumber === 3) {
-    output.innerHTML = '<br> YOU LOST: you played PAPER, Robo played SCISORS';
-     oneUpY();
-  }
-  if(value === 2 && randomNumber === 3) {
-    output.innerHTML = '<br> YOU WON: you played ROCK, Robo played SCISORS';
-    oneUpX();
-  }
-  if(value === 2 && randomNumber === 1) {
-    output.innerHTML = '<br> YOU LOST: you played ROCK, Robo played PAPER';
-    oneUpY();
-  }
-  if(value === 3 && randomNumber === 1) {
-    output.innerHTML = '<br> YOU WON: you played SCISORS, Robo played PAPER';
-    oneUpX();
-  }
-  if(value === 3 && randomNumber === 2) {
-    output.innerHTML = '<br> YOU LOST: you played SCISORS, Robo played ROCK';
-    oneUpY();
-  }
-}
-
-/*
-var buttons = document.querySelectorAll('.player-move');
-
-for ( var i = 0; i < buttons.length; i++){
-  var argValue = buttons[i].getAttribute("data-move");
-  buttons[i].addEventListener("click", playerMove(argValue));
-}
-
-console.log(argValue);
-
-
-// Buttons \\
-
-paperButton.addEventListener('click', function(){
-  random();
-  playerMove(paper);
-  roundsCountdown();
-});
-rockButton.addEventListener('click', function(){  
-  random();
-  playerMove(rock);
-  roundsCountdown();
-});
-scisorsButton.addEventListener('click', function(){
-  random();
-  playerMove(scisors);
-  roundsCountdown();
-}); 
-
-
-newGame.addEventListener('click', function(){
-  roundsNumber = window.prompt('Enter number of rounds you want to play :' , '10');
-  rounds.innerHTML =  roundsNumber + ' Rounds';
-  ilusion.classList.remove('magic');
-  clear();
-});
-
-
-})(); 
-
-*/
