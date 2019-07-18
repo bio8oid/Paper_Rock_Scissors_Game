@@ -116,4 +116,10 @@ button:hover {
   display: block;
   border-bottom: 1px solid #000;
 }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 /*# sourceMappingURL=style.css.map */
