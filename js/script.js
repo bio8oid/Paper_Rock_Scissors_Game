@@ -12,7 +12,7 @@
     ilusion: document.getElementById('ilusion'),
     paperButton: document.getElementById('paper-button'),
     rockButton: document.getElementById('rock-button'),
-    scisorsButton: document.getElementById('scisors-button'),
+    scissorsButton: document.getElementById('scissors-button'),
     newGameButton: document.getElementById('new-game'),
     startButtonModal: document.getElementById("start"),
     inputName: undefined,
@@ -25,7 +25,7 @@
     scoreY: 0,
     paper: 1,
     rock: 2,
-    scisors: 3,
+    scissors: 3,
     progress: []
   };
 
@@ -116,7 +116,7 @@
         var Robo = "rock";
       }
       if (params.randomNumber === 3) {
-        var Robo = "scisors";
+        var Robo = "scissors";
       }
 
       let tableRow = {
@@ -175,7 +175,7 @@
     if (attributeHandler === "rock") {
       var value = 2;
     }
-    if (attributeHandler === "scisors") {
+    if (attributeHandler === "scissors") {
       var value = 3;
     }
 
@@ -192,13 +192,13 @@
       push();
     }
     if (value === 1 && params.randomNumber === 3) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose PAPER and LOST <br><br> as Robo chose SCISORS';
+      params.output.innerHTML = '<br>' + params.inputName + ' chose PAPER and LOST <br><br> as Robo chose scissors';
       oneUpY();
       roundsCountdown();
       push();
     }
     if (value === 2 && params.randomNumber === 3) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose ROCK and WON <br><br> as Robo chose SCISORS';
+      params.output.innerHTML = '<br>' + params.inputName + ' chose ROCK and WON <br><br> as Robo chose scissors';
       oneUpX();
       roundsCountdown();
       push();
@@ -210,13 +210,13 @@
       push();
     }
     if (value === 3 && params.randomNumber === 1) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose SCISORS and WON <br><br> as Robo chose PAPER';
+      params.output.innerHTML = '<br>' + params.inputName + ' chose scissors and WON <br><br> as Robo chose PAPER';
       oneUpX();
       roundsCountdown();
       push();
     }
     if (value === 3 && params.randomNumber === 2) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose SCISORS and LOST <br><br> as Robo chose ROCK';
+      params.output.innerHTML = '<br>' + params.inputName + ' chose scissors and LOST <br><br> as Robo chose ROCK';
       oneUpY();
       roundsCountdown();
       push();
