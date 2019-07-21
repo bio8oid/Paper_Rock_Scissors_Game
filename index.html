@@ -27,9 +27,9 @@
 
 		<!------------------ Output infos ----------------->
 
-		<div id="output"></div>
+		<div class="output"	id="output"></div>
 		<div class="game-over" id="info"></div>
-		<div  id="result"></div>
+		<div class="result" id="result"></div>
 
 		<!------------------ Output infos table ----------------->
 
@@ -41,7 +41,7 @@
 			<h3></h3>
 			<p><a id="trigger" href="#modal-one" class="show-modal"></a></p>
 			<p><a id="trigger2" href="#modal-two" class="show-modal"></a></p>
-			<p><a id="trigger" href="#modal-three" class="show-modal"></a></p>
+			<p><a id="trigger3" href="#modal-three" class="show-modal"></a></p>
 		</div>
 
 		<div class="overlay " id="modal-overlay">
@@ -49,12 +49,20 @@
 				<a href="#" class="close">x</a>
 				<header class="headPop" id="won"></header>
 				<div class="content">
-					<div id="table" class="table"></div>
+					<div id="table" class="table">
+						<div id="header"></div>
+						<div id="wrap">
+							<div id="data-1"></div>
+							<div id="data-2"></div>
+							<div id="data-3"></div>
+							<div id="data-4"></div>
+							<div id="data-5"></div>
+						</div>	
+					</div>
 				</div>
 			</div>
 			<div class="modal " id="modal-two">
 				<a href="#" class="close">x</a>
-				<header></header>
 				<div class="start">
 					<form >
 						<p>Enter your name</p>
