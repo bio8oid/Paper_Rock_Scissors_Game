@@ -63,6 +63,12 @@
     params.total = 1;
     params.result.innerHTML = '';
     params.progress = [];
+    document.getElementById("data-1").innerHTML = '';
+    document.getElementById("data-2").innerHTML = '';
+    document.getElementById("data-3").innerHTML = '';
+    document.getElementById("data-4").innerHTML = '';
+    document.getElementById("data-5").innerHTML = '';
+
   }
 
   // Round Downcounter \\
@@ -244,7 +250,7 @@
       params.ilusion.classList.remove('magic');
     }
     else {
-      window.alert('Enter your name and number of winning rounds')
+      window.alert('Hi my name is Robo.<br>Enter your name and number of winning rounds')
     }
   })
 
