@@ -85,10 +85,10 @@
         params.modalWon.innerHTML = '<br> DRAW !!!';
       }
       if (params.scoreX > params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!';
+        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="https://media.giphy.com/media/N8wR1WZobKXaE/source.gif" alt="robo-lost"></img>';
       }
       if (params.scoreX < params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!';
+        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="https://media.giphy.com/media/1flAwtHCYosL6LWnHr/giphy.gif" alt="robo-lost"></img>';
       }
     }
   }
@@ -250,7 +250,7 @@
       params.ilusion.classList.remove('magic');
     }
     else {
-      window.alert('Hi my name is Robo.<br>Enter your name and number of winning rounds')
+      window.alert('Enter your name and number of winning rounds')
     }
   })
 

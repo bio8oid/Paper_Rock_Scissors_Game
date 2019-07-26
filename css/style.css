@@ -5,6 +5,19 @@ body {
   height: 100vh;
 }
 
+.robo-lost, .robo-won {
+height: 200px;
+width: 200px;
+border-radius: 10%;
+margin-top: 50px;
+}
+
+.robo {
+height: 100px;
+width: 100px;
+}
+
+
 #paper-button, #rock-button, #scissors-button {
   height: 200px;
   width: 200px;
