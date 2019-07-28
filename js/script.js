@@ -254,6 +254,13 @@
     }
   })
 
+// Click ME \\
+
+document.getElementById('scissors-button').onclick = function() {
+   document.getElementById('click').className = "hidden";
+}
+
+
   // Modals \\
 
   var showModal = function (event) {

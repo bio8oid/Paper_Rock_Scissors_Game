@@ -41,9 +41,33 @@ width: 100px;
 #scissors-button {
   background-image: url(https://media.giphy.com/media/3KVMZNceC1ruU/giphy-downsized.gif);
 }
+
 .button-group {
   display: flex;
   justify-content: center;
+}
+
+ #click {
+  background-image: url(../images/click-h.png);
+  background-size: cover;
+  background-position: center;
+  transform: rotate(180deg) translateX(-100px);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  z-index: 2;
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;  
+ }
+
+@keyframes pulse {
+  0% { transform: scale(1) rotate(180deg) translateX(-100px); }
+  50% { transform: scale(1.1) rotate(180deg) translateX(-100px);}
+  100% { transform: scale(1) rotate(180deg) translateX(-100px); }
+}
+   
+.hidden {
+  display: none;
 }
 
 button {
@@ -166,7 +190,7 @@ input {
   color: rgb(194, 71, 71);
 }
 
-form p, .game-over, .output, .result, .rounds  {
+form p, .game-over, .output, .result, .rounds {
   font-size: 28px;
   font-weight: bold;
   padding: 0 20px;
