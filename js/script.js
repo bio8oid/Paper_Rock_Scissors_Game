@@ -82,10 +82,10 @@
         params.modalWon.innerHTML = '<br> DRAW !!!';
       }
       if (params.scoreX > params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="../images/robo-lost.webp" alt="robo-lost"></img>';
+        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="./images/robo-lost.webp" alt="robo-lost"></img>';
       }
       if (params.scoreX < params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="../images/robo-won.webp" alt="robo-lost"></img>';
+        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="./images/robo-won.webp" alt="robo-lost"></img>';
       }
     }
   }
