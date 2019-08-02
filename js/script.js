@@ -10,6 +10,7 @@
     table: document.getElementById('table'),
     modalWon: document.getElementById('won'),
     ilusion: document.getElementById('ilusion'),
+    loader: document.getElementById('load'),
     paperButton: document.getElementById('paper-button'),
     rockButton: document.getElementById('rock-button'),
     scissorsButton: document.getElementById('scissors-button'),
@@ -27,10 +28,6 @@
     rock: 2,
     scissors: 3,
     progress: []
-  };
-
-  window.onload = function () {
-    params.ilusion.classList.add('magic');
   };
 
   // Score Counter \\
@@ -79,16 +76,16 @@
       params.output.innerHTML = '<br> GAME OVER <br><br> Please press the New Game button!';
       document.getElementById('won').classList.add('headPop');
       document.getElementById('trigger').click();
+      params.ilusion.classList.toggle('magic');
 
-      params.ilusion.classList.add('magic');
       if (params.scoreX === params.scoreY) {
         params.modalWon.innerHTML = '<br> DRAW !!!';
       }
       if (params.scoreX > params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="https://media.giphy.com/media/N8wR1WZobKXaE/source.gif" alt="robo-lost"></img>';
+        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="../images/robo-lost.webp" alt="robo-lost"></img>';
       }
       if (params.scoreX < params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="https://media.giphy.com/media/1flAwtHCYosL6LWnHr/giphy.gif" alt="robo-lost"></img>';
+        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="../images/robo-won.webp" alt="robo-lost"></img>';
       }
     }
   }
@@ -237,6 +234,7 @@
   }
 
   params.newGameButton.addEventListener('click', function () {
+    params.loader.classList.remove('loader');
     document.getElementById('trigger2').click();
     clean();
   });
@@ -254,7 +252,7 @@
     }
   })
 
-// Click ME \\
+// Click ME Pointer Hide\\
 
 document.getElementById('scissors-button').onclick = function() {
    document.getElementById('click').className = "hidden";
