@@ -9,7 +9,7 @@
     info: document.getElementById('info'),
     table: document.getElementById('table'),
     modalWon: document.getElementById('won'),
-    ilusion: document.getElementById('ilusion'),
+    buttonGroup: document.getElementById('button-group'),
     loader: document.getElementById('load'),
     paperButton: document.getElementById('paper-button'),
     rockButton: document.getElementById('rock-button'),
@@ -76,16 +76,19 @@
       params.output.innerHTML = '<br> GAME OVER <br><br> Please press the New Game button!';
       document.getElementById('won').classList.add('headPop');
       document.getElementById('trigger').click();
-      params.ilusion.classList.toggle('magic');
+      params.buttonGroup.classList.toggle('hidden');
+      params.newGameButton.classList.toggle('hidden');
 
       if (params.scoreX === params.scoreY) {
         params.modalWon.innerHTML = '<br> DRAW !!!';
       }
+
       if (params.scoreX > params.scoreY) {
         params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="./images/robo-lost.webp" alt="robo-lost"></img>';
-      }
+      }   
+      
       if (params.scoreX < params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="./images/robo-won.webp" alt="robo-lost"></img>';
+        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="./images/robo-won.webp" alt="robo-won"></img>';
       }
     }
   }
@@ -235,6 +238,7 @@
 
   params.newGameButton.addEventListener('click', function () {
     params.loader.classList.remove('loader');
+    params.newGameButton.classList.toggle('hidden');
     document.getElementById('trigger2').click();
     clean();
   });
@@ -245,7 +249,7 @@
     params.rounds.innerHTML = ' Score ' + params.inputRound + ' wins the GAME !  <br><br>';
     if (params.inputName.length && params.inputRound > 0) {
       hideModal();
-      params.ilusion.classList.remove('magic');
+      params.buttonGroup.classList.remove('hidden');
     }
     else {
       window.alert('Enter your name and number of winning rounds')

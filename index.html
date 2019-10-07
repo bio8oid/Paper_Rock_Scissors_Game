@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-	<body>
+<body>
+	<div id="background" class="background">
 
 		<!------------------ Winning score info ----------------->
 
@@ -16,25 +17,29 @@
 		<!------------------ Buttons ----------------->
 
 		<div>
-			<button class="new" id="new-game">New Game</button>
+			<button class="new opacity" id="new-game">New Game</button>
 			<div id="load" class="loader"></div>
 		</div>
 
-		<div class="button-group magic" id="ilusion">
-			<a href="#"><div id="paper-button" class="player-move"  data-move="paper"></div></a>
-			<a href="#"><div id="rock-button" class="player-move"  data-move="rock"></div></a>
-			<a href="#"><div id="scissors-button" class="player-move"  data-move="scissors"></div><div id="click" class=""></div></a>
+		<div class="button-group hidden" id="button-group">
+			<a href="#">
+				<div id="paper-button" class="player-move" data-move="paper"></div>
+			</a>
+			<a href="#">
+				<div id="rock-button" class="player-move" data-move="rock"></div>
+			</a>
+			<a href="#">
+				<div id="scissors-button" class="player-move" data-move="scissors"></div>
+				<div id="click" class=""></div>
+			</a>
 		</div>
 
 		<!------------------ Output infos ----------------->
 
-		<div class="output"	id="output"></div>
+		<div class="output" id="output"></div>
 		<div class="game-over" id="info"></div>
 		<div class="result" id="result"></div>
 
-		<!------------------ Output infos table ----------------->
-
-		
 
 		<!------------------ Modals ----------------->
 
@@ -58,14 +63,14 @@
 							<div id="data-3"></div>
 							<div id="data-4"></div>
 							<div id="data-5"></div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal " id="modal-two">
 				<a href="#" class="close">x</a>
 				<div class="start">
-					<form >
+					<form>
 						<p>Hi my name is Robo !</p>
 						<img class="robo" src="./images/robo.png" alt="robo">
 						<p>Enter your name</p>
@@ -87,8 +92,10 @@
 
 		<!------------------ Script file ----------------->
 
-		<script  src="js/script.js"></script>
+		<script src="js/script.js"></script>
 
-	</body>
+	</div>
+
+</body>
 
 </html>
