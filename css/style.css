@@ -23,19 +23,6 @@ body {
   box-shadow: 0px 0px 119px 200px rgba(0, 0, 0, 0.9);
 }
 
-.robo-lost,
-.robo-won {
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
-  margin-top: 50px;
-}
-
-.robo {
-  height: 100px;
-  width: 100px;
-}
-
 #paper-button,
 #rock-button,
 #scissors-button {
@@ -70,7 +57,29 @@ body {
       justify-content: center;
 }
 
-#click {
+.new-game-button {
+  background-color: orange;
+}
+
+button {
+  display: inline-block;
+  padding: 15px 80px;
+  max-width: 100%;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #02ac46;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #02ac46;
+}
+
+#pointer-hand {
   background-image: url(../images/click-h.png);
   background-size: cover;
   background-position: center;
@@ -95,58 +104,6 @@ body {
   }
 }
 
-.hidden {
-  display: none;
-}
-
-button {
-  display: inline-block;
-  padding: 15px 80px;
-  max-width: 100%;
-  font-size: 26px;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-  color: #fff;
-  background-color: #02ac46;
-  border: 2px solid #02ac46;
-  border-radius: 10px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: orange;
-}
-
-.new {
-  background-color: orange;
-}
-
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.table {
-  overflow: auto;
-  max-height: 30vh;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(251, 148, 31, 0.671);
-}
-
-.overlay.show {
-  display: block;
-}
-
 .modal {
   padding: 100px;
   display: none;
@@ -160,22 +117,6 @@ button:hover {
   border-radius: 10px;
 }
 
-.modal header {
-  margin-bottom: 80px;
-  font-size: 32px;
-  font-weight: bold;
-  font-family: "Fredericka the Great", cursive;
-  color: #c24747;
-}
-
-.modal header.headPop {
-  display: block;
-}
-
-.modal.show {
-  display: block;
-}
-
 .modal .close {
   position: absolute;
   right: 10px;
@@ -186,27 +127,43 @@ button:hover {
   font-family: "Fredericka the Great", cursive;
 }
 
-.box {
-  display: inline-block;
-  margin: 10px;
-  width: 120px;
-  border: 1px solid #000;
-  height: 120px;
-  border-radius: 20px;
+.modal header {
+  margin-bottom: 80px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Fredericka the Great", cursive;
+  color: #c24747;
 }
 
-.box head {
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(251, 148, 31, 0.671);
+}
+
+.overlay.show, .modal header.headPop, .modal.show {
   display: block;
-  border-bottom: 1px solid #000;
 }
 
-.content {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-direction: column;
-      flex-direction: column;
+.hidden {
+  display: none;
+}
+
+.robo-image {
+  height: 100px;
+  width: 100px;
+}
+
+.robo-lost-image,
+.robo-won-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  margin-top: 50px;
 }
 
 input {
@@ -216,6 +173,51 @@ input {
   font-size: 26px;
   height: 35px;
   color: #c24747;
+}
+
+form button {
+  display: block;
+  background: #c24747;
+  border: none;
+  margin: 80px auto;
+}
+
+.table-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.table-content .table {
+  overflow: auto;
+  max-height: 30vh;
+}
+
+.table-content .table div {
+  border: 1px solid orange;
+}
+
+.table-content .table-header {
+  display: -ms-flexbox;
+  display: flex;
+  background: orange;
+}
+
+.table-content .table-header div {
+  width: 20%;
+}
+
+.table-content .table-wrap {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table-content .table-data {
+  width: 20%;
+  display: inline-block;
 }
 
 form p,
@@ -229,11 +231,15 @@ form p,
   color: #c24747;
 }
 
-.result, .output, .game-over, .rounds {
+.result,
+.output,
+.game-over,
+.rounds {
   margin: 0 auto;
   width: 100px;
   padding: 10px;
   background: #000;
+  border-radius: 50%;
   box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.9);
 }
 
@@ -249,40 +255,5 @@ form p,
 .game-over {
   padding: 30px 0;
   color: #6443dd;
-}
-
-form button {
-  display: block;
-  background: #c24747;
-  border: none;
-  margin: 80px auto;
-}
-
-#table div {
-  border: 1px solid orange;
-}
-
-#header {
-  display: -ms-flexbox;
-  display: flex;
-  background: orange;
-}
-
-#header div {
-  width: 20%;
-}
-
-#wrap {
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#data-1,
-#data-2,
-#data-3,
-#data-4,
-#data-5 {
-  width: 20%;
-  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */

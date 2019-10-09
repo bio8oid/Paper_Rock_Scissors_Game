@@ -1,3 +1,4 @@
+//  GENERAL  \\
 
 body {
   padding: 0;
@@ -5,13 +6,18 @@ body {
   text-align: center;
   background: -webkit-linear-gradient(153deg, #9eebd9 0%, #f5c152 100%);
   height: 82vh;
-   padding-top: 160px;
+  padding-top: 160px;
   height: 85vh;
-   background: url(../images/back.png);
+  background: url(../images/back.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
+
+//  LOADER  \\
+
 
 .loader {
   width: 800px;
@@ -21,21 +27,15 @@ body {
   background-size: cover;
   background-position: left;
   margin: 100px auto;
-  box-shadow: 0px 0px 119px 200px rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 119px 200px rgba(0, 0, 0, 0.9);
 }
 
-.robo-lost,
-.robo-won {
-  height: 200px;
-  width: 200px;
-  border-radius: 10%;
-  margin-top: 50px;
-}
 
-.robo {
-  height: 100px;
-  width: 100px;
-}
+// BUTTONS  \\
+
+
+
+// Paper Rock Scissors Buttons \\
 
 #paper-button,
 #rock-button,
@@ -49,7 +49,7 @@ body {
   box-shadow: 0px 0px 43px -10px #000;
   padding: 15px;
   margin: 50px;
-  box-shadow: 0px 0px 100px 100px rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.9);
 }
 
 #paper-button {
@@ -69,7 +69,39 @@ body {
   justify-content: center;
 }
 
-#click {
+
+//  New Game Button  \\
+
+.new-game-button {
+  background-color: orange;
+}
+
+
+//  General Button \\
+
+button {
+  display: inline-block;
+  padding: 15px 80px;
+  max-width: 100%;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #02ac46;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #02ac46;
+  }
+}
+
+
+//  POINTER HAND  \\
+
+
+#pointer-hand {
   background-image: url(../images/click-h.png);
   background-size: cover;
   background-position: center;
@@ -94,57 +126,19 @@ body {
   }
 }
 
-.hidden {
-  display: none;
-}
 
-button {
-  display: inline-block;
-  padding: 15px 80px;
-  max-width: 100%;
-  font-size: 26px;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: middle;
-  color: #fff;
-  background-color: #02ac46;
-  border: 2px solid #02ac46;
-  border-radius: 10px;
-  cursor: pointer;
-  text-decoration: none;
-}
 
-button:hover {
-  background-color: orange;
-}
 
-.new {
-  background-color: orange;
-}
 
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-}
+// .container {
+//   max-width: 400px;
+//   margin: 0 auto;
+// }
 
-.table {
-  overflow: auto;
-  max-height: 30vh;
-}
 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(251, 148, 31, 0.671);
-}
 
-.overlay.show {
-  display: block;
-}
+
+//  MODALS  \\
 
 .modal {
   padding: 100px;
@@ -159,22 +153,6 @@ button:hover {
   border-radius: 10px;
 }
 
-.modal header {
-  margin-bottom: 80px;
-  font-size: 32px;
-  font-weight: bold;
-  font-family: "Fredericka the Great", cursive;
-  color: rgb(194, 71, 71);
-}
-
-.modal header.headPop {
-  display: block;
-}
-
-.modal.show {
-  display: block;
-}
-
 .modal .close {
   position: absolute;
   right: 10px;
@@ -185,25 +163,47 @@ button:hover {
   font-family: "Fredericka the Great", cursive;
 }
 
-.box {
-  display: inline-block;
-  margin: 10px;
-  width: 120px;
-  border: 1px solid #000;
-  height: 120px;
-  border-radius: 20px;
+.modal header {
+  margin-bottom: 80px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Fredericka the Great", cursive;
+  color: rgb(194, 71, 71);
 }
 
-.box head {
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(251, 148, 31, 0.671);
+}
+
+.overlay.show, .modal header.headPop, .modal.show{
   display: block;
-  border-bottom: 1px solid #000;
+}
+  
+.hidden {
+  display: none;
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+.robo-image {
+  height: 100px;
+  width: 100px;
 }
+
+.robo-lost-image,
+.robo-won-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  margin-top: 50px;
+}
+
+
+
 
 input {
   text-align: center;
@@ -213,6 +213,117 @@ input {
   height: 35px;
   color: rgb(194, 71, 71);
 }
+
+form button {
+  display: block;
+  background: rgb(194, 71, 71);
+  border: none;
+  margin: 80px auto;
+}
+
+// Modal Table \\
+
+
+.table-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+.table {
+  overflow: auto;
+  max-height: 30vh; 
+
+    div {
+      border: 1px solid orange;
+    }
+}
+
+.table-header {
+  display: flex;
+  background: orange;
+
+  div {
+    width: 20%;
+  }
+}
+
+// .table-wrap {
+//   //display: flex;
+//   //flex-direction: column;
+//   //width: 100%;
+
+//   .rtd {
+//     //width: 100%;
+//     //@at-rootdisplay: flex;
+//     //flex-direction: column;
+//     display: flex;
+//     div {
+//       //display: inline-block;
+//       //height: 20px;
+//       width: 20%;
+//       //display: flex;
+//     }
+//   }
+
+// }
+// .table-dat {
+//   width: 20%;
+//   display: inline-block;
+// }
+
+.table-wrap {
+  display: flex;
+  //flex-direction: column;
+
+  }
+
+.table-data {
+  width: 20%;
+  display: inline-block;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .box {
+//   display: inline-block;
+//   margin: 10px;
+//   width: 120px;
+//   border: 1px solid #000;
+//   height: 120px;
+//   border-radius: 20px;
+// }
+
+// .box head {
+//   display: block;
+//   border-bottom: 1px solid #000;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 form p,
 .game-over,
@@ -225,17 +336,21 @@ form p,
   color: rgb(194, 71, 71);
 }
 
-.result, .output, .game-over, .rounds {
+.result,
+.output,
+.game-over,
+.rounds {
   margin: 0 auto;
   width: 100px;
   padding: 10px;
   background: #000;
-  box-shadow: 0px 0px 100px 100px rgba(0,0,0,0.9);
-
+  border-radius: 50%;
+  box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.9);
 }
-    .rounds {
-      width: 400px;
-    }
+
+.rounds {
+  width: 400px;
+}
 
 .output {
   width: 30%;
@@ -247,35 +362,3 @@ form p,
   color: rgb(100, 67, 221);
 }
 
-form button {
-  display: block;
-  background: rgb(194, 71, 71);
-  border: none;
-  margin: 80px auto;
-}
-
-#table div {
-  border: 1px solid orange;
-}
-
-#header {
-  display: flex;
-  background: orange;
-}
-
-#header div {
-  width: 20%;
-}
-
-#wrap {
-  display: flex;
-}
-
-#data-1,
-#data-2,
-#data-3,
-#data-4,
-#data-5 {
-  width: 20%;
-  display: inline-block;
-}

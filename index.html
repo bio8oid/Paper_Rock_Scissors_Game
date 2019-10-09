@@ -17,7 +17,7 @@
 		<!------------------ Buttons ----------------->
 
 		<div>
-			<button class="new opacity" id="new-game">New Game</button>
+			<button class="new-game-button opacity" id="new-game">New Game</button>
 			<div id="load" class="loader"></div>
 		</div>
 
@@ -30,7 +30,7 @@
 			</a>
 			<a href="#">
 				<div id="scissors-button" class="player-move" data-move="scissors"></div>
-				<div id="click" class=""></div>
+				<div id="pointer-hand" class="pointer-hand"></div>
 			</a>
 		</div>
 
@@ -54,15 +54,15 @@
 			<div class="modal " id="modal-one">
 				<a href="#" class="close">x</a>
 				<header class="headPop" id="won"></header>
-				<div class="content">
+				<div class="table-content">
 					<div id="table" class="table">
-						<div id="header"></div>
-						<div id="wrap">
-							<div id="data-1"></div>
-							<div id="data-2"></div>
-							<div id="data-3"></div>
-							<div id="data-4"></div>
-							<div id="data-5"></div>
+						<div class="table-header" id="header"></div>
+						<div class="table-wrap" id="wrap">
+							<div class="table-data" id="data-1"></div>
+							<div class="table-data" id="data-2"></div>
+							<div class="table-data" id="data-3"></div>
+							<div class="table-data" id="data-4"></div>
+							<div class="table-data" id="data-5"></div>
 						</div>
 					</div>
 				</div>
@@ -72,11 +72,11 @@
 				<div class="start">
 					<form>
 						<p>Hi my name is Robo !</p>
-						<img class="robo" src="./images/robo.png" alt="robo">
+						<img class="robo-image" src="./images/robo.png" alt="robo">
 						<p>Enter your name</p>
-						<input type="text" id="name" required>
+						<input autocomplete="on" type="text" id="name" name="John" required>
 						<p>Enter SCORE winning the GAME</p>
-						<input type="number" id="win-number" required>
+						<input autocomplete="on" type="number" id="win-number" name="2" required>
 						<button class="" id="start">START</button>
 					</form>
 				</div>

@@ -2,20 +2,21 @@
 'use strict';
 (function () {
 
+  const output = document.getElementById('output');
+  const rounds = document.getElementById('rounds');
+  const result = document.getElementById('result');
+  const info = document.getElementById('info');
+  //const table = document.getElementById('table');
+  const modalWon = document.getElementById('won');
+  const buttonGroup = document.getElementById('button-group');
+  const loader = document.getElementById('load');
+  //const paperButton = document.getElementById('paper-button');
+  //const rockButton = document.getElementById('rock-button');
+  //const scissorsButton = document.getElementById('scissors-button');
+  const newGameButton = document.getElementById('new-game');
+  const startButtonModal = document.getElementById("start");
+
   window.params = {
-    output: document.getElementById('output'),
-    rounds: document.getElementById('rounds'),
-    result: document.getElementById('result'),
-    info: document.getElementById('info'),
-    table: document.getElementById('table'),
-    modalWon: document.getElementById('won'),
-    buttonGroup: document.getElementById('button-group'),
-    loader: document.getElementById('load'),
-    paperButton: document.getElementById('paper-button'),
-    rockButton: document.getElementById('rock-button'),
-    scissorsButton: document.getElementById('scissors-button'),
-    newGameButton: document.getElementById('new-game'),
-    startButtonModal: document.getElementById("start"),
     inputName: undefined,
     inputRound: undefined,
     win: undefined,
@@ -34,38 +35,54 @@
 
   function oneUpX() {
     params.scoreX++;
-    params.result.innerHTML = params.scoreX + ' - ' + params.scoreY;
+    result.innerHTML = params.scoreX + ' - ' + params.scoreY;
     params.win = params.inputName;
   }
   function oneUpY() {
     params.scoreY++;
-    params.result.innerHTML = params.scoreX + ' - ' + params.scoreY;
+    result.innerHTML = params.scoreX + ' - ' + params.scoreY;
     params.win = 'Robo';
   }
   function draw() {
-    params.result.innerHTML = params.scoreX + ' - ' + params.scoreY;
+    result.innerHTML = params.scoreX + ' - ' + params.scoreY;
     params.win = 'Draw';
   }
+
+  // function oneUp() {
+  //   if() {
+  //     params.scoreX++;
+  //     params.win = params.inputName;
+  //   }
+  //   if() {
+  //     params.scoreY++;
+  //     params.win = 'Robo';
+  //   }
+  // else {
+  //   params.win = 'Draw';
+  // }
+  // result.innerHTML = params.scoreX + ' - ' + params.scoreY;
+  // }
+
+
 
   // Clear All Info \\
 
   const clean = () => {
     document.getElementById("name").value = '';
     document.getElementById("win-number").value = '';
-    params.output.innerHTML = '';
-    params.info.innerHTML = '';
-    params.modalWon.innerHTML = '';
+    output.innerHTML = '';
+    info.innerHTML = '';
+    modalWon.innerHTML = '';
     params.scoreX = 0;
     params.scoreY = 0;
     params.total = 1;
-    params.result.innerHTML = '';
+    result.innerHTML = '';
     params.progress = [];
     document.getElementById("data-1").innerHTML = '';
     document.getElementById("data-2").innerHTML = '';
     document.getElementById("data-3").innerHTML = '';
     document.getElementById("data-4").innerHTML = '';
     document.getElementById("data-5").innerHTML = '';
-
   }
 
   // Round Downcounter \\
@@ -73,22 +90,22 @@
   function roundsCountdown() {
     if (params.inputRound == params.scoreX || params.inputRound == params.scoreY) {
 
-      params.output.innerHTML = '<br> GAME OVER <br><br> Please press the New Game button!';
+      output.innerHTML = '<br> GAME OVER <br><br> Please press the New Game button!';
       document.getElementById('won').classList.add('headPop');
       document.getElementById('trigger').click();
-      params.buttonGroup.classList.toggle('hidden');
-      params.newGameButton.classList.toggle('hidden');
+      buttonGroup.classList.toggle('hidden');
+      newGameButton.classList.toggle('hidden');
 
       if (params.scoreX === params.scoreY) {
-        params.modalWon.innerHTML = '<br> DRAW !!!';
+        modalWon.innerHTML = '<br> DRAW !!!';
       }
 
       if (params.scoreX > params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost" src="./images/robo-lost.webp" alt="robo-lost"></img>';
-      }   
-      
+        modalWon.innerHTML = '<br>YOU WON THE ENTIRE GAME !!!' + '<br><img class="robo-lost-image" src="./images/robo-lost.webp" alt="robo-lost"></img>';
+      }
+
       if (params.scoreX < params.scoreY) {
-        params.modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won" src="./images/robo-won.webp" alt="robo-won"></img>';
+        modalWon.innerHTML = '<br>YOU LOST THE ENTIRE GAME !!!' + '<br><img class="robo-won-image" src="./images/robo-won.webp" alt="robo-won"></img>';
       }
     }
   }
@@ -96,18 +113,31 @@
   // Total Rounds Counter \\
 
   function total() {
-    params.info.innerHTML = params.total++;
+    info.innerHTML = params.total++;
   }
 
   // Robo Move \\
 
   function random() {
     params.randomNumber = Math.floor(Math.random() * 3) + 1;
+
+    switch(params.randomNumber) {
+      case 1:
+        return 'paper';
+        break;
+      case 2:
+        return 'rock';
+        break;
+      case 3:
+        return 'scissors';
+        break;
+      }
   }
 
   // Bio Player Move and Results Assess \\
 
   function playerMove(event) {
+    const Robo = random()
     random();
     total();
 
@@ -115,61 +145,234 @@
 
     let push = () => {
 
-      if (params.randomNumber === 1) {
-        var Robo = "paper";
-      }
-      if (params.randomNumber === 2) {
-        var Robo = "rock";
-      }
-      if (params.randomNumber === 3) {
-        var Robo = "scissors";
-      }
+      // if (params.randomNumber === 1) {
+      //   var Robo = "paper";
+      // }
+      // if (params.randomNumber === 2) {
+      //   var Robo = "rock";
+      // }
+      // if (params.randomNumber === 3) {
+      //   var Robo = "scissors";
+      // }
+
+      console.log(Robo)
+      console.log(event)
+      console.log(event.value)
 
       let tableRow = {
-        roundNumber: params.info.innerHTML,
+        roundNumber: info.innerHTML,
         bioMove: attributeHandler,
         roboMove: Robo,
         whoWon:  params.win,
-        score: params.result.innerHTML
+        score: result.innerHTML
       }
       params.progress.push(tableRow);
+      console.log(params.progress)
 
       //  Final Modal Table Generator \\
 
-      const headerContent = '<div>Round</div>' + '<div>' + params.inputName + '</div>' + '<div>Robo</div>' + '<div>Winner</div>' + '<div>Score</div>';
+      const headerContent = `<div>Round</div><div>${params.inputName}</div><div>Robo</div><div>Winner</div><div>Score</div>`;
       const header = document.getElementById("header");
       header.innerHTML = headerContent;
 
+
+      // const headerContent =
+      //   `<div>Round</div>
+      // <div>${params.inputName}</div>
+      // <div>Robo</div>
+      // <div>Winner</div>
+      // <div>Score</div>`
+
+      // const header = document.getElementById("header");
+      // header.innerHTML = headerContent;
+
+      // const tableRow =
+      //   `<div class="rtd">
+      // <div>${info.innerHTML}</div>
+      // <div>${attributeHandler}</div>
+      // <div>${attributeHandler}</div>
+      // <div>${Robo}</div>
+      // <div>${result.innerHTML}</div>
+      // </div>`
+
+      // const row = document.getElementById("wrap");
+      // row.innerHTML = params.progress.join("");
+
+      // //  Final Modal Table Generator \\
+
+
+
+      // params.progress.push(tableRow);
+
+    // }  
+
+
+
+
+
+    // params.progress.map(item => {
+
+    //   td = `<div>${item.roundNumber}</div><div>${item.bioMove}</div><div>${item.roboMove}</div><div>${item.whoWon}</div><div>${item.score}</div>`
+
+    //   const nodes = document.querySelectorAll(".table-data")
+    //   //const td = document.getElementById("wrap");
+    //   const content = Object.values(item)
+    //   // td.innerHTML = [...content];
+    //   console.log(item)
+    //   // console.log(td)
+    //   // console.log(nodes)
+    //   console.log(content)
+    //   // console.log(nodes[item.roundNumber].innerHTML=content[item.roundNumber])
+
+    // var tableUpdate = nodes.forEach((node, index) => {
+    //           // console.log(node)
+    //           // console.log(content[index])
+    //           return   node.innerHTML = content[index]
+    //           // console.log(node.innerHTML = content[index])
+    //         })
+
+
+
+    //       console.log(tableUpdate )
+
+    //     params.progress.push(tableUpdate);
+
+    //   console.log(params.progress)
+
+    //.item.node(item.index.content)
+
+    // const row = document.createElement('div')
+
+    // .innerHTML=content
+    // console.log(row)
+
+
+    //const td = document.getElementById(`data-${item.roundNumber}`);
+    //const Content = document.createElement('div');
+    //td.innerHTML = item.roundNumber;
+
+    //console.log(round)
+    //console.log(item.bioMove)
+    //console.log(td.innerHTML = item.roundNumber)
+    //console.log(round.map(item => item))
+
+    //round.appendChild(item.value);
+
+    //const round = document.getElementById("data-1");
+    // const roundContent = document.createElement('div');
+    // roundContent.innerHTML = x.roundNumber;
+
+    // })
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        const generate = x => {
 
-          const round = document.getElementById("data-1");
-          const roundContent = document.createElement('div');
-          roundContent.innerHTML = x.roundNumber;
-          round.appendChild(roundContent);
+        const round = document.getElementById("data-1");
+        const roundContent = document.createElement('div');
+        roundContent.innerHTML = x.roundNumber;
+        round.appendChild(roundContent);
 
-          const you = document.getElementById("data-2");
-          const youContent = document.createElement('div');
-          youContent.innerHTML = x.bioMove;
-          you.appendChild(youContent);
+        const you = document.getElementById("data-2");
+        const youContent = document.createElement('div');
+        youContent.innerHTML = x.bioMove;
+        you.appendChild(youContent);
 
-          const robo = document.getElementById("data-3");
-          const roboContent = document.createElement('div');
-          roboContent.innerHTML = x.roboMove;
-          robo.appendChild(roboContent);
+        const robo = document.getElementById("data-3");
+        const roboContent = document.createElement('div');
+        roboContent.innerHTML = x.roboMove;
+        robo.appendChild(roboContent);
 
-          const winner = document.getElementById("data-4");
-          const winnerContent = document.createElement('div');
-          winnerContent.innerHTML = x.whoWon;
-          winner.appendChild(winnerContent);
+        const winner = document.getElementById("data-4");
+        const winnerContent = document.createElement('div');
+        winnerContent.innerHTML = x.whoWon;
+        winner.appendChild(winnerContent);
 
-          const score = document.getElementById("data-5");
-          const scoreContent = document.createElement('div');
-          scoreContent.innerHTML = x.score;
-          score.appendChild(scoreContent);
+        const score = document.getElementById("data-5");
+        const scoreContent = document.createElement('div');
+        scoreContent.innerHTML = x.score;
+        score.appendChild(scoreContent);
+
         }
       params.progress.map(generate);
+      console.log(params.progress);
       params.progress = [];
     }
+
+
+
+
+
+
+
+
+
+
+    // const generate = x => {
+
+    //       const round = document.getElementById("data-1");
+    //       const roundContent = document.createElement('div');
+    //       roundContent.innerHTML = x.roundNumber;
+    //       round.appendChild(roundContent);
+
+    //       const you = document.getElementById("data-2");
+    //       const youContent = document.createElement('div');
+    //       youContent.innerHTML = x.bioMove;
+    //       you.appendChild(youContent);
+
+    //       const robo = document.getElementById("data-3");
+    //       const roboContent = document.createElement('div');
+    //       roboContent.innerHTML = x.roboMove;
+    //       robo.appendChild(roboContent);
+
+    //       const winner = document.getElementById("data-4");
+    //       const winnerContent = document.createElement('div');
+    //       winnerContent.innerHTML = x.whoWon;
+    //       winner.appendChild(winnerContent);
+
+    //       const score = document.getElementById("data-5");
+    //       const scoreContent = document.createElement('div');
+    //       scoreContent.innerHTML = x.score;
+    //       score.appendChild(scoreContent);
+
+    //     }
+
+
+
+
+    // params.progress.map(item => {
+    //   const divContent = document.createElement('div')
+    //       const round = document.querySelectorAll(".table-data")
+    //       console.log(round)
+    //       console.log(round[item.roundNumber])
+    //       console.log(divContent)
+    //       console.log(item)
+    //     //round[item].appendChild(item.divContent).innerHTML = item.tableRow
+    //   })
+    //     params.progress = []
+    //   }
+
+
+
+
+
+
+
+
+
 
     // Pass info from buttons and compute result \\
 
@@ -185,44 +388,47 @@
       var value = 3;
     }
 
+    console.log(this.dataset.move)
+
+
     if (value === params.randomNumber) {
-      params.output.innerHTML = '<br> DRAW';
+      output.innerHTML = '<br> DRAW';
       draw();
       roundsCountdown();
       push();
     }
     if (value === 1 && params.randomNumber === 2) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose PAPER and WON <br><br> as Robo chose ROCK';
+      output.innerHTML = '<br>' + params.inputName + ' chose PAPER and WON <br><br> as Robo chose ROCK';
       oneUpX();
       roundsCountdown();
       push();
     }
     if (value === 1 && params.randomNumber === 3) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose PAPER and LOST <br><br> as Robo chose scissors';
+      output.innerHTML = '<br>' + params.inputName + ' chose PAPER and LOST <br><br> as Robo chose scissors';
       oneUpY();
       roundsCountdown();
       push();
     }
     if (value === 2 && params.randomNumber === 3) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose ROCK and WON <br><br> as Robo chose scissors';
+      output.innerHTML = '<br>' + params.inputName + ' chose ROCK and WON <br><br> as Robo chose scissors';
       oneUpX();
       roundsCountdown();
       push();
     }
     if (value === 2 && params.randomNumber === 1) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose ROCK and LOST <br><br> as Robo chose PAPER';
+      output.innerHTML = '<br>' + params.inputName + ' chose ROCK and LOST <br><br> as Robo chose PAPER';
       oneUpY();
       roundsCountdown();
       push();
     }
     if (value === 3 && params.randomNumber === 1) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose scissors and WON <br><br> as Robo chose PAPER';
+      output.innerHTML = '<br>' + params.inputName + ' chose scissors and WON <br><br> as Robo chose PAPER';
       oneUpX();
       roundsCountdown();
       push();
     }
     if (value === 3 && params.randomNumber === 2) {
-      params.output.innerHTML = '<br>' + params.inputName + ' chose scissors and LOST <br><br> as Robo chose ROCK';
+      output.innerHTML = '<br>' + params.inputName + ' chose scissors and LOST <br><br> as Robo chose ROCK';
       oneUpY();
       roundsCountdown();
       push();
@@ -236,31 +442,31 @@
     choiceButtons[i].addEventListener("click", playerMove);
   }
 
-  params.newGameButton.addEventListener('click', function () {
-    params.loader.classList.remove('loader');
-    params.newGameButton.classList.toggle('hidden');
+  newGameButton.addEventListener('click', function () {
+    loader.classList.remove('loader');
     document.getElementById('trigger2').click();
     clean();
   });
 
-    params.startButtonModal.addEventListener('click', function () {
+  startButtonModal.addEventListener('click', function () {
     params.inputName = document.getElementById("name").value;
     params.inputRound = document.getElementById("win-number").value;
-    params.rounds.innerHTML = ' Score ' + params.inputRound + ' wins the GAME !  <br><br>';
+    rounds.innerHTML = ' Score ' + params.inputRound + ' wins the GAME !  <br><br>';
     if (params.inputName.length && params.inputRound > 0) {
       hideModal();
-      params.buttonGroup.classList.remove('hidden');
+      newGameButton.classList.toggle('hidden');
+      buttonGroup.classList.remove('hidden');
     }
     else {
       window.alert('Enter your name and number of winning rounds')
     }
   })
 
-// Click ME Pointer Hide\\
+  // Click ME Pointer Hide\\
 
-document.getElementById('scissors-button').onclick = function() {
-   document.getElementById('click').className = "hidden";
-}
+  document.getElementById('scissors-button').onclick = function () {
+    document.getElementById('pointer-hand').className = "hidden";
+  }
 
 
   // Modals \\
