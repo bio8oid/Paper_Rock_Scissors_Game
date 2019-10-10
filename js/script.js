@@ -199,6 +199,7 @@
   }
 
   const hideModal = () => {
+    event.preventDefault();
     document.querySelector('#modal-overlay').classList.toggle('show');
     document.querySelector('#modal-two').classList.toggle('show');
   };
