@@ -8,6 +8,7 @@
   const modalWon = document.getElementById('won');
   const buttonGroup = document.getElementById('button-group');
   const loader = document.getElementById('load');
+  const loaderWrap = document.getElementById('loader-wrap');
   const newGameButton = document.getElementById('new-game');
   const startButtonModal = document.getElementById("start");
 
@@ -42,15 +43,13 @@
   // Reset All Info \\
 
   const clean = () => {
-    document.getElementById("name").value = '';
-    document.getElementById("win-number").value = '';
     output.innerHTML = '';
     info.innerHTML = '';
+    result.innerHTML = '';
     modalWon.innerHTML = '';
     params.bioScore = 0;
     params.roboScore = 0;
     params.total = 1;
-    result.innerHTML = '';
     params.progress = [];
   }
 
@@ -137,7 +136,7 @@
       header.innerHTML = headerContent;
 
       const tableRow =
-        `<div class="rtd">
+        `<div class="table-row-elements">
       <div>${info.innerHTML}</div>
       <div>${bio}</div>
       <div>${robo}</div>
@@ -160,9 +159,12 @@
     button.addEventListener("click", playerMove);
   }
 
-  newGameButton.addEventListener('click', () => {
+  newGameButton.addEventListener('click', (event) => {
     loader.classList.remove('loader');
+    loaderWrap.classList.remove('loader-wrap');
     document.getElementById('trigger2').click();
+    // document.querySelector('#modal-overlay').classList.add('show');
+    // document.querySelector('#modal-two').classList.add('show');
     clean();
   });
 
@@ -180,7 +182,7 @@
     }
   })
 
-  // Click ME Pointer Hide\\
+  // Click ME Hand Pointer Hide \\
 
   document.getElementById('scissors-button').onclick = () => {
     document.getElementById('pointer-hand').className = "hidden";

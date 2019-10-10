@@ -18,7 +18,9 @@
 
 		<div>
 			<button class="new-game-button opacity" id="new-game">New Game</button>
-			<div id="load" class="loader"></div>
+			<div id="loader-wrap" class="loader-wrap">
+				<div id="load" class="loader"></div>
+			</div>
 		</div>
 
 		<div class="button-group hidden" id="button-group">
@@ -54,17 +56,9 @@
 			<div class="modal " id="modal-one">
 				<a href="#" class="close">x</a>
 				<header class="headPop" id="won"></header>
-				<div class="table-content">
-					<div id="table" class="table">
-						<div class="table-header" id="header"></div>
-						<div class="table-wrap" id="wrap">
-							<div class="table-data" id="data-1"></div>
-							<!-- <div class="table-data" id="data-2"></div>
-							<div class="table-data" id="data-3"></div>
-							<div class="table-data" id="data-4"></div>
-							<div class="table-data" id="data-5"></div> -->
-						</div>
-					</div>
+				<div id="table" class="table">
+					<div class="table-header" id="header"></div>
+					<div class="table-row" id="wrap"></div>
 				</div>
 			</div>
 			<div class="modal " id="modal-two">
