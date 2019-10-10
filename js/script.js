@@ -60,9 +60,9 @@
 
       output.innerHTML = '<br> GAME OVER <br><br> Please press the New Game button!';
       document.getElementById('won').classList.add('headPop');
-      document.getElementById('trigger').click();
       buttonGroup.classList.toggle('hidden');
       newGameButton.classList.toggle('hidden');
+      showModal(event);
 
       if (params.bioScore === params.roboScore) {
         modalWon.innerHTML = '<br> DRAW !!!';
@@ -100,7 +100,7 @@
     }
   }
 
-  // Bio Player Move and Results Assess \\
+  // Bio Player Move and Result Assess \\
 
   const playerMove = event => {
     const robo = random()
@@ -135,7 +135,7 @@
       const header = document.getElementById("header");
       header.innerHTML = headerContent;
 
-      const tableRow =
+      const tableRowContent =
         `<div class="table-row-elements">
       <div>${info.innerHTML}</div>
       <div>${bio}</div>
@@ -144,9 +144,9 @@
       <div>${result.innerHTML}</div>
       </div>`
 
-      const row = document.getElementById("wrap");
-      params.progress.push(tableRow);
-      row.innerHTML = params.progress.join("");
+      const tableRow = document.getElementById("wrap");
+      params.progress.push(tableRowContent);
+      tableRow.innerHTML = params.progress.join("");
     }
     roundsCountdown();
     push();
@@ -159,12 +159,10 @@
     button.addEventListener("click", playerMove);
   }
 
-  newGameButton.addEventListener('click', (event) => {
+  newGameButton.addEventListener('click', () => {
     loader.classList.remove('loader');
     loaderWrap.classList.remove('loader-wrap');
-    document.getElementById('trigger2').click();
-    // document.querySelector('#modal-overlay').classList.add('show');
-    // document.querySelector('#modal-two').classList.add('show');
+    showModal(event);
     clean();
   });
 
@@ -191,36 +189,22 @@
   // Modals \\
 
   const showModal = event => {
-    event.preventDefault();
-    document.querySelectorAll('#modal-overlay > *').forEach((event) => {
-      event.classList.remove('show');
-    })
+    if (event.target.className === "player-move") {
+      document.querySelector('#modal-one').classList.add('show');
+    }
+    else if (event.target.id === "new-game") {
+      document.querySelector('#modal-two').classList.add('show');
+    }
     document.querySelector('#modal-overlay').classList.add('show');
-    const argValue = event.target.hash;
-    document.querySelector(argValue).classList.add('show');
-  }
-
-  const modalLinks = document.querySelectorAll('.show-modal');
-  for (const link of modalLinks) {
-    link.addEventListener('click', showModal);
   }
 
   const hideModal = () => {
-    event.preventDefault();
-    document.querySelector('#modal-overlay').classList.remove('show');
+    document.querySelector('#modal-overlay').classList.toggle('show');
+    document.querySelector('#modal-two').classList.toggle('show');
   };
 
   const closeButtons = document.querySelectorAll('.modal .close');
   for (const button of closeButtons) {
     button.addEventListener('click', hideModal);
-  }
-  
-  document.querySelector('#modal-overlay').addEventListener('click', hideModal);
-
-  const modals = document.querySelectorAll('.modal');
-  for (const modal of modals) {
-    modal.addEventListener('click', event => {
-      event.stopPropagation();
-    });
   }
 })();

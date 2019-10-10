@@ -17,21 +17,16 @@
 		<!------------------ Buttons ----------------->
 
 		<div>
-			<button class="new-game-button opacity" id="new-game">New Game</button>
+			<button class="new-game-button opacity" id="new-game" href="#modal-two">New Game</button>
 			<div id="loader-wrap" class="loader-wrap">
 				<div id="load" class="loader"></div>
 			</div>
 		</div>
 
 		<div class="button-group hidden" id="button-group">
-			<a href="#">
-				<div id="paper-button" class="player-move" data-move="paper"></div>
-			</a>
-			<a href="#">
-				<div id="rock-button" class="player-move" data-move="rock"></div>
-			</a>
-			<a href="#">
-				<div id="scissors-button" class="player-move" data-move="scissors"></div>
+			<a href="#"><div id="paper-button" class="player-move" data-move="paper"></div></a>
+			<a href="#"><div id="rock-button" class="player-move" data-move="rock"></div></a>
+			<a href="#"><div id="scissors-button" class="player-move" data-move="scissors"></div>
 				<div id="pointer-hand" class="pointer-hand"></div>
 			</a>
 		</div>
@@ -45,12 +40,6 @@
 
 		<!------------------ Modals ----------------->
 
-		<div id="page-wrapper" class="">
-			<h3></h3>
-			<p><a id="trigger" href="#modal-one" class="show-modal"></a></p>
-			<p><a id="trigger2" href="#modal-two" class="show-modal"></a></p>
-			<p><a id="trigger3" href="#modal-three" class="show-modal"></a></p>
-		</div>
 
 		<div class="overlay " id="modal-overlay">
 			<div class="modal " id="modal-one">
@@ -75,20 +64,10 @@
 					</form>
 				</div>
 			</div>
-			<div class="modal " id="modal-three">
-				<a href="#" class="close">x</a>
-				<header></header>
-				<div class="">
-					<p></p>
-				</div>
-			</div>
 		</div>
-
-		<!------------------ Script file ----------------->
-
-		<script src="js/script.js"></script>
-
 	</div>
+
+	<script src="js/script.js"></script>
 
 </body>
 
