@@ -210,12 +210,16 @@ form button {
   width: 20%;
 }
 
-.table-content .table-wrap {
+.table-content .table-wrap .rtd {
   display: -ms-flexbox;
   display: flex;
 }
 
-.table-content .table-data {
+.table-content .table-wrap .rtd div {
+  width: 20%;
+}
+
+.table-content .table-dat {
   width: 20%;
   display: inline-block;
 }
@@ -236,7 +240,7 @@ form p,
 .game-over,
 .rounds {
   margin: 0 auto;
-  width: 100px;
+  width: 150px;
   padding: 10px;
   background: #000;
   border-radius: 50%;
@@ -250,6 +254,10 @@ form p,
 .output {
   width: 30%;
   border-radius: 50%;
+}
+
+.output span {
+  text-transform: uppercase;
 }
 
 .game-over {

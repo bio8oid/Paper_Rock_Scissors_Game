@@ -247,40 +247,40 @@ form button {
   }
 }
 
-// .table-wrap {
-//   //display: flex;
-//   //flex-direction: column;
-//   //width: 100%;
-
-//   .rtd {
-//     //width: 100%;
-//     //@at-rootdisplay: flex;
-//     //flex-direction: column;
-//     display: flex;
-//     div {
-//       //display: inline-block;
-//       //height: 20px;
-//       width: 20%;
-//       //display: flex;
-//     }
-//   }
-
-// }
-// .table-dat {
-//   width: 20%;
-//   display: inline-block;
-// }
-
 .table-wrap {
-  display: flex;
+  //display: flex;
   //flex-direction: column;
+  //width: 100%;
 
+  .rtd {
+    //width: 100%;
+    //@at-rootdisplay: flex;
+    //flex-direction: column;
+    display: flex;
+    div {
+      //display: inline-block;
+      //height: 20px;
+      width: 20%;
+      //display: flex;
+    }
   }
 
-.table-data {
+}
+.table-dat {
   width: 20%;
   display: inline-block;
 }
+
+// .table-wrap {
+//   display: flex;
+//   //flex-direction: column;
+
+//   }
+
+// .table-data {
+//   width: 20%;
+//   display: inline-block;
+// }
 }
 
 
@@ -341,7 +341,7 @@ form p,
 .game-over,
 .rounds {
   margin: 0 auto;
-  width: 100px;
+  width: 150px;
   padding: 10px;
   background: #000;
   border-radius: 50%;
@@ -355,6 +355,10 @@ form p,
 .output {
   width: 30%;
   border-radius: 50%;
+
+  span {
+    text-transform: uppercase;
+  }
 }
 
 .game-over {
