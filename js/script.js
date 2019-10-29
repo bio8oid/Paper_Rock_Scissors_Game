@@ -1,16 +1,16 @@
 'use strict';
 (function () {
 
-  const output = document.getElementById('output');
-  const rounds = document.getElementById('rounds');
-  const result = document.getElementById('result');
-  const info = document.getElementById('info');
-  const modalWon = document.getElementById('won');
-  const buttonGroup = document.getElementById('button-group');
-  const loader = document.getElementById('load');
-  const loaderWrap = document.getElementById('loader-wrap');
-  const newGameButton = document.getElementById('new-game');
-  const startButtonModal = document.getElementById("start");
+  const output = document.getElementById('output'),
+        rounds = document.getElementById('rounds'),
+        result = document.getElementById('result'),
+        info = document.getElementById('info'),
+        modalWon = document.getElementById('won'),
+        buttonGroup = document.getElementById('button-group'),
+        loader = document.getElementById('load'),
+        loaderWrap = document.getElementById('loader-wrap'),
+        newGameButton = document.getElementById('new-game'),
+        startButtonModal = document.getElementById("start")
 
   window.params = {
     inputName: undefined,
