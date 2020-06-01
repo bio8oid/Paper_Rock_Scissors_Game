@@ -105,6 +105,7 @@
   const playerMove = event => {
     const robo = random()
     const bio = event.target.getAttribute("data-move");
+    console.log('bio:', bio)
     random();
     total();
 
