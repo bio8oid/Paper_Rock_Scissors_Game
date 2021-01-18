@@ -93,3 +93,6 @@ typings/
 
 # Yarn
 .pnp.js
+
+#Others
+.DS_Store
