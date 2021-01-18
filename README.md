@@ -1,3 +1,6 @@
-### Paper Rock Scissors Game 
+### Calculator App - OOP JavaScript
 
-[PLAY](https://bio8oid.github.io/Paper_Rock_Scissors_Game/)
+[DEMO](https://js-calculator-js.netlify.app)
+
+
+![](images/calc.screen.png)
