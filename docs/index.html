@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>PRS - game</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="background" class="background">
+		<!------------------ Winning score info ----------------->
+
+		<div class="rounds" id="rounds"></div>
+
+		<!------------------ Buttons ----------------->
+
+		<div>
+			<button class="new-game-button opacity" id="new-game" href="#modal-two">New Game</button>
+			<div id="loader-wrap" class="loader-wrap">
+				<div id="load" class="loader"></div>
+			</div>
+		</div>
+
+		<div class="button-group hidden" id="button-group">
+			<a href="#">
+				<div id="paper-button" class="player-move" data-move="paper"></div>
+			</a>
+			<a href="#">
+				<div id="rock-button" class="player-move" data-move="rock"></div>
+			</a>
+			<a href="#">
+				<div id="scissors-button" class="player-move" data-move="scissors"></div>
+				<div id="pointer-hand" class="pointer-hand"></div>
+			</a>
+		</div>
+
+		<!------------------ Output infos ----------------->
+
+		<div class="output" id="output"></div>
+		<div class="game-over" id="info"></div>
+		<div class="result" id="result"></div>
+
+
+		<!------------------ Modals ----------------->
+
+
+		<div class="overlay " id="modal-overlay">
+			<div class="modal " id="modal-one">
+				<a href="#" class="close">x</a>
+				<header class="headPop" id="won"></header>
+				<div id="table" class="table">
+					<div class="table-header" id="header"></div>
+					<div class="table-row" id="wrap"></div>
+				</div>
+			</div>
+			<div class="modal " id="modal-two">
+				<a href="#" class="close">x</a>
+				<div class="start">
+					<form class="form">
+						<p>Hi my name is Robo !</p>
+						<img class="robo-image" src="./images/robo.png" alt="robo">
+						<p>Enter your name</p>
+						<input autocomplete="on" type="text" id="name" name="John" required>
+						<p>Enter SCORE winning the GAME</p>
+						<input autocomplete="on" type="number" id="win-number" name="2" required>
+						<button class="form-button" id="start">START</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

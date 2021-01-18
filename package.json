@@ -1,21 +1,19 @@
 {
-  "name": "calc",
+  "name": "paper-rock-scissors",
   "version": "1",
-  "description": "calculator",
+  "description": "simple-javascript-game",
   "main": "index.js",
-  "dependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
+    "@babel/register": "^7.12.10",
     "babel": "^6.23.0",
+    "browser-sync": "^2.26.7",
     "core-js": "^3.6.5",
     "del": "^5.1.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",

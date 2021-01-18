@@ -1,6 +1,4 @@
-### Calculator App - OOP JavaScript
+### Paper Rock Scissors Game 
 
-[DEMO](https://js-calculator-js.netlify.app)
+[PLAY](https://scissors-rock-paper.netlify.app)
 
-
-![](images/calc.screen.png)

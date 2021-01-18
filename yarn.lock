@@ -1091,7 +1091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.11.5":
+"@babel/register@npm:^7.12.10":
   version: 7.12.10
   resolution: "@babel/register@npm:7.12.10"
   dependencies:
@@ -1974,30 +1974,6 @@ __metadata:
   checksum: 3f362ba824453d4043df82655314503e591a09a1bcb909ffdfcc74deb0fe4e7c58e40de31293153b07aeb5545610a1d81bf49b67cff5d3dd084d389e5a4d4849
   languageName: node
   linkType: hard
-
-"calc@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "calc@workspace:."
-  dependencies:
-    "@babel/core": ^7.11.6
-    "@babel/plugin-proposal-class-properties": ^7.10.4
-    "@babel/polyfill": ^7.11.5
-    "@babel/preset-env": ^7.11.5
-    "@babel/register": ^7.11.5
-    babel: ^6.23.0
-    browser-sync: ^2.26.7
-    core-js: ^3.6.5
-    del: ^5.1.0
-    gulp: ^4.0.2
-    gulp-autoprefixer: ^7.0.1
-    gulp-babel: ^8.0.0
-    gulp-clean-css: ^4.3.0
-    gulp-cli: ^2.3.0
-    gulp-livereload: ^4.0.2
-    gulp-sass: ^4.1.0
-    gulp-uglify: ^3.0.2
-  languageName: unknown
-  linkType: soft
 
 "call-bind@npm:^1.0.0":
   version: 1.0.2
@@ -5429,6 +5405,30 @@ fsevents@~2.3.1:
   checksum: 20983f3765466c1ab617ed153cb53b70ac5df828d854a3334d185e20b37f436e9096f12bc1b7fc96d8908dc927a3685172d3d89e755774f57b7103460c54dcc5
   languageName: node
   linkType: hard
+
+"paper-rock-scissors@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "paper-rock-scissors@workspace:."
+  dependencies:
+    "@babel/core": ^7.11.6
+    "@babel/plugin-proposal-class-properties": ^7.10.4
+    "@babel/polyfill": ^7.11.5
+    "@babel/preset-env": ^7.11.5
+    "@babel/register": ^7.12.10
+    babel: ^6.23.0
+    browser-sync: ^2.26.7
+    core-js: ^3.6.5
+    del: ^5.1.0
+    gulp: ^4.0.2
+    gulp-autoprefixer: ^7.0.1
+    gulp-babel: ^8.0.0
+    gulp-clean-css: ^4.3.0
+    gulp-cli: ^2.3.0
+    gulp-livereload: ^4.0.2
+    gulp-sass: ^4.1.0
+    gulp-uglify: ^3.0.2
+  languageName: unknown
+  linkType: soft
 
 "parse-filepath@npm:^1.0.1":
   version: 1.0.2
